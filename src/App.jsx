@@ -103,6 +103,7 @@ const App = () => {
       />
       {
         text && <LetterDensity sortLetters={sortLetters} />
+      
       }
     </main>
   )

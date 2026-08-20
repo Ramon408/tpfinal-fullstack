@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  padding: 20px;
+  height: 100vh;
+}
+
+main.dark-theme {
+  background-color: rgb(37, 36, 36);
+  color: white;
+}
+
+main.dark-theme h2 {
+  color: violet;
+}

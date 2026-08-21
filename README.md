@@ -1,4 +1,4 @@
-# Character Counter UTN
+# Character Counter
 
 ## 1. Objetivo del proyecto
 

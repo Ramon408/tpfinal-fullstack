@@ -309,14 +309,17 @@ main {
 }
 
 .letter-density h2 {
-  margin-bottom: 14px;
-  color: #f5f5f7;
+  margin-bottom: 16px;
+  color: #111111;
   font-size: 21px;
+  font-weight: 700;
 }
 
 .density-list ul,
 .meter-list {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .density-item {
@@ -324,32 +327,39 @@ main {
   grid-template-columns: 30px 1fr 95px;
   align-items: center;
   gap: 14px;
+
   margin-bottom: 12px;
 }
 
 .density-letter {
-  color: #e5e5e7;
+  color: #222222;
   font-size: 15px;
+  font-weight: 400;
 }
 
-.density-item meter {
+.density-bar {
   width: 100%;
-  height: 10px;
-}
+  height: 9px;
 
-.density-item meter::-webkit-meter-bar {
+  overflow: hidden;
+
+  border-radius: 10px;
+
   background: #151d2d;
-  border: none;
-  border-radius: 10px;
 }
 
-.density-item meter::-webkit-meter-optimum-value {
-  background: #c86bf4;
+.density-bar-fill {
+  height: 100%;
+
   border-radius: 10px;
+
+  background: #c86bf4;
+
+  transition: width 0.3s ease;
 }
 
 .density-value {
-  color: #e4e5e9;
+  color: #222222;
   font-size: 14px;
   white-space: nowrap;
 }
@@ -360,20 +370,47 @@ main {
 
 .letter-density summary {
   width: fit-content;
+
   color: #111111;
+
   cursor: pointer;
+
   font-size: 14px;
+  font-weight: 400;
+
+  list-style-position: inside;
 }
 
 .letter-density summary::marker {
   color: inherit;
 }
 
-main.dark-theme .letter-density summary {
-  color: #ffffff;
-}
 .meter-list {
   margin-top: 14px;
+}
+
+/* =========================
+  Modo Oscuro
+========================= */
+
+main.dark-theme .letter-density h2 {
+  color: #ffffff;
+}
+
+main.dark-theme .density-letter {
+  color: #ffffff;
+}
+
+main.dark-theme .density-value {
+  color: #e4e5e9;
+}
+
+main.dark-theme .density-bar {
+  background: #151d2d;
+}
+
+main.dark-theme .letter-density summary {
+  color: #ffffff;
 }
 
 main.dark-theme {

@@ -5,11 +5,12 @@ const ProgressBar = ({ letter }) => {
         {letter.letterName.toUpperCase()}
       </span>
 
-      <meter
-        min="0"
-        max="100"
-        value={letter.percentage}
-      />
+      <div className="density-bar">
+        <div
+          className="density-bar-fill"
+          style={{ width: `${letter.percentage}%` }}
+        ></div>
+      </div>
 
       <span className="density-value">
         {letter.amount} ({letter.percentage.toFixed(1)}%)

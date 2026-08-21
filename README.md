@@ -2,7 +2,7 @@
 
 ## 1. Objetivo del proyecto
 
-El objetivo de este proyecto fue desarrollar una aplicación web de análisis de texto llamada **Character Counter UTN**, tomando como referencia visual una interfaz de contador de caracteres.
+El objetivo de este proyecto fue desarrollar una aplicación web de análisis de texto llamada **Character Counter**, tomando como referencia visual una interfaz de contador de caracteres.
 
 La aplicación permite ingresar texto y analizarlo en tiempo real, mostrando información sobre la cantidad de caracteres, palabras y oraciones, además de calcular un tiempo aproximado de lectura y representar la densidad de las letras utilizadas.
 

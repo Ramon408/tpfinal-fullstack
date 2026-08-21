@@ -2,24 +2,34 @@ import { ProgressBar } from "./ProgressBar"
 
 const LetterDensity = ({ sortLetters }) => {
   return (
-    <section>
-      <h2>Cantidad de letras</h2>
-      <article>
+    <section className="letter-density">
+      <h2>Letter Density</h2>
+
+      <article className="density-list">
         <ul>
-          {
-            sortLetters.slice(0, 5).map(letter => <ProgressBar key={letter.letterName} letter={letter} />)
-          }
+          {sortLetters.slice(0, 5).map((letter) => (
+            <ProgressBar
+              key={letter.letterName}
+              letter={letter}
+            />
+          ))}
         </ul>
       </article>
 
-      <details>
-        <summary>See more</summary>
-        <ul className="meter-list">
-          {
-            sortLetters.slice(5, sortLetters.length).map(letter => <ProgressBar key={letter.letterName} letter={letter} />)
-          }
-        </ul>
-      </details>
+      {sortLetters.length > 5 && (
+        <details>
+          <summary>See more</summary>
+
+          <ul className="meter-list">
+            {sortLetters.slice(5).map((letter) => (
+              <ProgressBar
+                key={letter.letterName}
+                letter={letter}
+              />
+            ))}
+          </ul>
+        </details>
+      )}
     </section>
   )
 }

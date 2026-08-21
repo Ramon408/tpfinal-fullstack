@@ -4,16 +4,344 @@
   box-sizing: border-box;
 }
 
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  background: #050811;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #111111;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
 main {
+  min-height: 100vh;
+  padding: 24px;
+  background: #ffffff;
+  color: #111111;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header {
+  width: min(1020px, 100%);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.brand-logo {
+  width: 22px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c56cff;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.brand h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #f5f5f7;
+}
+
+.theme-button {
+  width: 50px;
+  height: 46px;
+  border: 0;
+  border-radius: 15px;
+  background: #171d2b;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.main-title {
+  width: 100%;
+  margin: 32px auto 18px;
+  text-align: center;
+  font-size: 42px;
+  line-height: 1.05;
+  font-weight: 800;
+  color: #f7f7f8;
+}
+
+.write-area {
+  width: min(886px, 100%);
+  margin: 0 auto;
+}
+
+.write-area textarea {
+  width: 100%;
+  min-height: 136px;
+  resize: vertical;
   padding: 20px;
-  height: 100vh;
+  border: 1px solid #31394b;
+  border-radius: 15px;
+  outline: none;
+  background: #151b27;
+  color: #ffffff;
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.write-area textarea:focus {
+  border-color: #a958ed;
+}
+
+.controls {
+  width: min(886px, 100%);
+  margin: 16px auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.control-options {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.control-options label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #c5c9d2;
+  font-size: 14px;
+}
+
+.control-options input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: #bf69f5;
+}
+
+.reading-time {
+  color: #c5c9d2;
+  font-size: 14px;
+}
+
+.limit-input {
+  width: 65px;
+  padding: 5px 8px;
+  border: 1px solid #343c4d;
+  border-radius: 6px;
+  background: #151b27;
+  color: white;
+}
+
+.stats-section {
+  width: min(886px, 100%);
+  margin: 0 auto 28px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+}
+
+.stat-card {
+  position: relative;
+  min-height: 128px;
+  padding: 20px 24px;
+  overflow: hidden;
+  border-radius: 17px;
+  color: #050505;
+}
+
+.stat-card-purple {
+  background: linear-gradient(135deg, #c66af6, #d28cf9);
+}
+
+.stat-card-orange {
+  background: linear-gradient(135deg, #ff9700, #ffab17);
+}
+
+.stat-card-red {
+  background: linear-gradient(135deg, #ff5e43, #ff7258);
+}
+
+.stat-number {
+  display: block;
+  font-size: 54px;
+  line-height: 1;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.stat-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.letter-density {
+  width: min(886px, 100%);
+  margin: 0 auto;
+}
+
+.letter-density h2 {
+  margin-bottom: 14px;
+  color: #f5f5f7;
+  font-size: 21px;
+}
+
+.density-list ul,
+.meter-list {
+  list-style: none;
+}
+
+.density-item {
+  display: grid;
+  grid-template-columns: 30px 1fr 95px;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.density-letter {
+  color: #e5e5e7;
+  font-size: 15px;
+}
+
+.density-item meter {
+  width: 100%;
+  height: 10px;
+}
+
+.density-item meter::-webkit-meter-bar {
+  background: #151d2d;
+  border: none;
+  border-radius: 10px;
+}
+
+.density-item meter::-webkit-meter-optimum-value {
+  background: #c86bf4;
+  border-radius: 10px;
+}
+
+.density-value {
+  color: #e4e5e9;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.letter-density details {
+  margin-top: 14px;
+}
+
+.letter-density summary {
+  width: fit-content;
+  color: #111111;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.letter-density summary::marker {
+  color: inherit;
+}
+
+main.dark-theme .letter-density summary {
+  color: #ffffff;
+}
+.meter-list {
+  margin-top: 14px;
 }
 
 main.dark-theme {
-  background-color: rgb(37, 36, 36);
+  background: #050811;
   color: white;
 }
 
 main.dark-theme h2 {
-  color: violet;
+  color: #ffffff;
+}
+
+/* =========================
+   Modo Oscuro
+========================= */
+
+main.dark-theme {
+  background: #050811;
+  color: #ffffff;
+}
+
+main.dark-theme .brand h1 {
+  color: #f5f5f7;
+}
+
+main.dark-theme .main-title {
+  color: #f7f7f8;
+}
+
+main.dark-theme .write-area textarea {
+  background: #151b27;
+  color: #ffffff;
+  border-color: #31394b;
+}
+
+main.dark-theme .control-options label,
+main.dark-theme .reading-time {
+  color: #c5c9d2;
+}
+
+main.dark-theme .letter-density h2 {
+  color: #ffffff;
+}
+
+main.dark-theme .density-letter,
+main.dark-theme .density-value {
+  color: #e4e5e9;
+}
+
+/* =========================
+   Modo Claro
+========================= */
+
+main:not(.dark-theme) .brand h1 {
+  color: #111111;
+}
+
+main:not(.dark-theme) .main-title {
+  color: #111111;
+}
+
+main:not(.dark-theme) .write-area textarea {
+  background: #f5f5f5;
+  color: #111111;
+  border-color: #d5d5d5;
+}
+
+main:not(.dark-theme) .control-options label,
+main:not(.dark-theme) .reading-time {
+  color: #444444;
+}
+
+main:not(.dark-theme) .letter-density h2 {
+  color: #111111;
+}
+
+main:not(.dark-theme) .density-letter,
+main:not(.dark-theme) .density-value {
+  color: #333333;
 }

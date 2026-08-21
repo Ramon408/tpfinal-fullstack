@@ -20,27 +20,28 @@ const App = () => {
     setExcludeSpaces(!excludeSpaces)
   }
 
-  const handleLimitValue = () => {
-    setLimitValue(!limitCharacter)
+  const handleLimitValue = (value) => {
+    setLimitValue(Number(value))
   }
 
   const handleChangeTextarea = (e) => {
     const value = e.target.value
 
     if (limitCharacter) {
-
-      if (value.length <= limitValue) {
-        setText(value)
-      }
+      setText(value.slice(0, limitValue))
     } else {
       setText(value)
     }
   }
 
   const handleChangeInputLimit = () => {
-    setLimitCharacter(!limitCharacter)
-    const newText = text.slice(0, limitValue)
-    setText(newText)
+    const newLimitCharacter = !limitCharacter
+
+    setLimitCharacter(newLimitCharacter)
+
+    if (newLimitCharacter) {
+      setText(text.slice(0, limitValue))
+    }
   }
 
   const characters = excludeSpaces ? text.replace(/\s/g, "").length : text.length
@@ -80,9 +81,15 @@ const App = () => {
 
   return (
     <main className={`${dark ? "dark-theme" : ""}`}>
-      <Header handleDarkTheme={handleDarkTheme} />
-      <h2>Analiza el texto <br />
-        en tiempo real.</h2>
+      <Header
+        dark={dark}
+        handleDarkTheme={handleDarkTheme}
+      />
+      <h2 className="main-title">
+        Analyze your text
+        <br />
+        in real-time.
+      </h2>
       <WriteArea
         handleChangeTextarea={handleChangeTextarea}
         text={text}
@@ -103,7 +110,7 @@ const App = () => {
       />
       {
         text && <LetterDensity sortLetters={sortLetters} />
-      
+
       }
     </main>
   )

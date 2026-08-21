@@ -33,7 +33,9 @@ const Controlls = ({
             type="number"
             min="1"
             value={limitValue}
-            onChange={(e) => handleLimitValue(e.target.value)}
+            onChange={(e) =>
+              handleLimitValue(e.target.value)
+            }
           />
         )}
       </div>

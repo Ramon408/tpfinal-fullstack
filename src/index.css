@@ -154,7 +154,8 @@ main {
 
 .stats-section {
   width: min(886px, 100%);
-  margin: 0 auto 28px;
+  margin: 0 auto 30px;
+
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 17px;
@@ -162,37 +163,144 @@ main {
 
 .stat-card {
   position: relative;
+
   min-height: 128px;
-  padding: 20px 24px;
+  padding: 22px 24px;
+
   overflow: hidden;
+
   border-radius: 17px;
+
   color: #050505;
 }
 
 .stat-card-purple {
-  background: linear-gradient(135deg, #c66af6, #d28cf9);
+  background: linear-gradient(
+    135deg,
+    #bd65ef 0%,
+    #d28bf5 100%
+  );
 }
 
 .stat-card-orange {
-  background: linear-gradient(135deg, #ff9700, #ffab17);
+  background: linear-gradient(
+    135deg,
+    #ff8d00 0%,
+    #ffad19 100%
+  );
 }
 
 .stat-card-red {
-  background: linear-gradient(135deg, #ff5e43, #ff7258);
+  background: linear-gradient(
+    135deg,
+    #ff5c43 0%,
+    #ff7358 100%
+  );
 }
 
 .stat-number {
+  position: relative;
+  z-index: 2;
+
   display: block;
+
   font-size: 54px;
   line-height: 1;
+
   font-weight: 500;
+
   margin-bottom: 12px;
 }
 
 .stat-label {
+  position: relative;
+  z-index: 2;
+
   display: block;
+
   font-size: 14px;
   font-weight: 500;
+}
+
+/* =========================
+   DECORACIONES
+========================= */
+
+.stat-decoration {
+  position: absolute;
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+/* Tarjeta violeta */
+
+.decoration-purple {
+  width: 150px;
+  height: 150px;
+
+  right: -28px;
+  top: -20px;
+
+  opacity: 0.18;
+
+  background:
+    radial-gradient(
+      circle at 20px 20px,
+      #ffffff 0 12px,
+      transparent 13px
+    );
+
+  background-size: 38px 38px;
+}
+
+/* Tarjeta naranja */
+
+.decoration-orange {
+  width: 120px;
+  height: 120px;
+
+  right: -5px;
+  top: -5px;
+
+  opacity: 0.16;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0 35%,
+      #ffffff 35% 65%,
+      transparent 65%
+    ),
+    linear-gradient(
+      0deg,
+      transparent 0 35%,
+      #ffffff 35% 65%,
+      transparent 65%
+    );
+
+  background-size: 42px 42px;
+}
+
+/* Tarjeta roja */
+
+.decoration-red {
+  width: 150px;
+  height: 150px;
+
+  right: -25px;
+  top: -18px;
+
+  opacity: 0.15;
+
+  background:
+    radial-gradient(
+      circle at 18px 18px,
+      #ffffff 0 12px,
+      transparent 13px
+    );
+
+  background-size: 36px 36px;
 }
 
 .letter-density {

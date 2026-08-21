@@ -15,8 +15,9 @@
 body {
   min-width: 320px;
   min-height: 100vh;
-  background: #ffffff;
+  background: #f7f7f8;
   color: #111111;
+  transition: background-color 0.3s ease;
 }
 
 button,
@@ -28,7 +29,7 @@ textarea {
 main {
   min-height: 100vh;
   padding: 24px;
-  background: #ffffff;
+  background: #f7f7f8;
   color: #111111;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -83,6 +84,50 @@ main {
   line-height: 1.05;
   font-weight: 800;
   color: #f7f7f8;
+}
+
+main:not(.dark-theme) .brand h1 {
+  color: #161616;
+}
+
+main:not(.dark-theme) .theme-button {
+  background: #e9e9ec;
+  color: #202020;
+}
+
+main:not(.dark-theme) .main-title {
+  color: #161616;
+}
+
+main:not(.dark-theme) .write-area textarea {
+  background: #ffffff;
+  color: #171717;
+  border-color: #d7d7dc;
+}
+
+main:not(.dark-theme) .write-area textarea::placeholder {
+  color: #777777;
+}
+
+main:not(.dark-theme) .control-options label,
+main:not(.dark-theme) .reading-time {
+  color: #444444;
+}
+
+main:not(.dark-theme) .letter-density h2 {
+  color: #161616;
+}
+
+main:not(.dark-theme) .density-letter {
+  color: #303030;
+}
+
+main:not(.dark-theme) .density-value {
+  color: #444444;
+}
+
+main:not(.dark-theme) .density-bar {
+  background: #dedee3;
 }
 
 .write-area {
@@ -415,11 +460,51 @@ main.dark-theme .letter-density summary {
 
 main.dark-theme {
   background: #050811;
-  color: white;
+  color: #ffffff;
 }
 
-main.dark-theme h2 {
+main.dark-theme .brand h1 {
+  color: #f5f5f7;
+}
+
+main.dark-theme .theme-button {
+  background: #171d2b;
   color: #ffffff;
+}
+
+main.dark-theme .main-title {
+  color: #f7f7f8;
+}
+
+main.dark-theme .write-area textarea {
+  background: #151b27;
+  color: #ffffff;
+  border-color: #31394b;
+}
+
+main.dark-theme .write-area textarea::placeholder {
+  color: #8d929d;
+}
+
+main.dark-theme .control-options label,
+main.dark-theme .reading-time {
+  color: #c5c9d2;
+}
+
+main.dark-theme .letter-density h2 {
+  color: #ffffff;
+}
+
+main.dark-theme .density-letter {
+  color: #ffffff;
+}
+
+main.dark-theme .density-value {
+  color: #e4e5e9;
+}
+
+main.dark-theme .density-bar {
+  background: #151d2d;
 }
 
 /* =========================

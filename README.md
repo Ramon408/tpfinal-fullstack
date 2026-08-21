@@ -377,15 +377,7 @@ npm run preview
 
 ### Vista Desktop
 
-![Vista Desktop](assets/images/CharacterCounter.png)
-
-### Vista Mobile
-
-![Vista Mobile](assets/images/character_counter_combinada.png)
-
-### Estructura del proyecto en VS Code
-
-![Estructura del proyecto](assets/images/Explorador_VSCode.png)
+![Vista Desktop](src/assets/images/Vista Desktop.jpg)
 
 ---
 

@@ -49,14 +49,10 @@ main {
 }
 
 .brand-logo {
-  width: 22px;
-  height: 27px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #c56cff;
-  font-size: 22px;
-  font-weight: 900;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
 }
 
 .brand h1 {

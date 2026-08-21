@@ -377,7 +377,7 @@ npm run preview
 
 ### Vista Desktop
 
-![Vista Desktop](src/assets/images/Vista Desktop.jpg)
+![Vista Desktop](src/assets/images/VistaDesktop.jpg)
 
 ---
 

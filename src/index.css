@@ -490,3 +490,116 @@ main:not(.dark-theme) .density-letter,
 main:not(.dark-theme) .density-value {
   color: #333333;
 }
+
+/* =========================
+   DISEÑO RESPONSIVE
+========================= */
+
+/* TABLET */
+
+@media (max-width: 768px) {
+  main {
+    padding: 20px;
+  }
+
+  .main-title {
+    font-size: 36px;
+  }
+
+  .stats-section {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .stat-card {
+    min-height: 120px;
+  }
+
+  .controls {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .control-options {
+    flex-wrap: wrap;
+  }
+}
+
+
+/* CELULAR */
+
+@media (max-width: 480px) {
+  main {
+    padding: 16px;
+  }
+
+  .header {
+    gap: 15px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .brand h1 {
+    font-size: 18px;
+  }
+
+  .theme-button {
+    width: 44px;
+    height: 42px;
+    border-radius: 13px;
+  }
+
+  .main-title {
+    margin-top: 28px;
+    font-size: 30px;
+  }
+
+  .write-area textarea {
+    min-height: 160px;
+    padding: 16px;
+    font-size: 14px;
+  }
+
+  .controls {
+    margin-top: 14px;
+  }
+
+  .control-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .reading-time {
+    font-size: 13px;
+  }
+
+  .stat-card {
+    min-height: 115px;
+    padding: 18px;
+  }
+
+  .stat-number {
+    font-size: 48px;
+  }
+
+  .stat-label {
+    font-size: 13px;
+  }
+
+  .density-item {
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+  }
+
+  .density-value {
+    grid-column: 2;
+    font-size: 13px;
+  }
+
+  .density-bar {
+    grid-column: 2;
+  }
+}
